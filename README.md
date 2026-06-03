@@ -1,4 +1,4 @@
-##rlcli
+# rlcli
 Interactive Raylib Project builder that does everyting like:
 - The sample code for bare-minimum raylib compilation
 - Incudes a tasks.json for VSCode
