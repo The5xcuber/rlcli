@@ -38,5 +38,5 @@ sudo xbps-install -y make git alsa-lib-devel libglvnd-devel libX11-devel libXran
 ### 2. Download and Deploy rlcli
 ```bash
 sudo curl -sSL https://raw.githubusercontent.com/The5xcuber/rlcli/main/rlcli -o /usr/local/bin/rlcli && sudo chmod +x /usr/local/bin/rlcli
-echo "✓ rlcli successfully installed into /usr/local/bin/rlcli!"
+echo '✓ rlcli successfully installed into /usr/local/bin/rlcli!'
 ```
