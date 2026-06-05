@@ -18,24 +18,25 @@ Follow this clean two-step setup to install the core system dependencies and dep
 ### 1. Install System Dependencies
 Run the command matching your Linux distribution to install the required development graphics and audio libraries:
 
+### Ubuntu / Debian / Linux Mint / Pop!_OS
 ```bash
-# Ubuntu / Debian / Linux Mint
+
 sudo add-apt-repository universe -y && sudo apt update && sudo apt install -y build-essential git libasound2-dev libx11-dev libxrandr-dev libxi-dev libgl1-mesa-dev libglu1-mesa-dev libxcursor-dev libxinerama-dev libwayland-dev libxkbcommon-dev
 ```
-# Fedora
+### Fedora
 ```bash
 sudo dnf install -y gcc gcc-c++ git alsa-lib-devel mesa-libGL-devel libX11-devel libXrandr-devel libXi-devel libXcursor-devel libXinerama-devel libatomic
 ```
-# Arch Linux / SteamOS
+### Arch Linux / SteamOS
 ```bash
 sudo pacman -Syu --noconfirm base-devel git alsa-lib mesa libx11 libxrandr libxi libxcursor libxinerama
 ```
-# Void Linux
+### Void Linux
 ```bash
 sudo xbps-install -y make git alsa-lib-devel libglvnd-devel libX11-devel libXrandr-devel libXi-devel libXcursor-devel libXinerama-devel mesa MesaLib-devel
 ```
 ### 2. Download and Deploy rlcli
 ```bash
-sudo curl -sSL [https://raw.githubusercontent.com/The5xcuber/rlcli/main/rlcli](https://raw.githubusercontent.com/The5xcuber/rlcli/main/rlcli) -o /usr/local/bin/rlcli && sudo chmod +x /usr/local/bin/rlcli
+sudo curl -sSL https://raw.githubusercontent.com/The5xcuber/rlcli/main/rlcli -o /usr/local/bin/rlcli && sudo chmod +x /usr/local/bin/rlcli
 echo "✓ rlcli successfully installed into /usr/local/bin/rlcli!"
 ```
