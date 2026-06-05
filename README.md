@@ -13,19 +13,26 @@ Interactive Raylib Project builder that does (almost) everything like:
 
 ## 🚀 Installation
 
-Run this clean two-step setup to enable the necessary repositories, install dependencies, and download `rlcli` globally:
+Follow this clean two-step setup to install the core system dependencies and deploy `rlcli` globally:
+
+### 1. Install System Dependencies
+Run the command matching your Linux distribution to install the required development graphics and audio libraries:
 
 ```bash
-# 1. Install Raylib and compilation tools based on your Linux distribution
-if command -v apt-get &> /dev/null; then
-    sudo add-apt-repository universe -y && sudo apt update
-    sudo apt install -y build-essential libraylib-dev
-elif command -v dnf &> /dev/null; then
-    sudo dnf install -y gcc gcc-c++ raylib-devel
-elif command -v pacman &> /dev/null; then
-    sudo pacman -Syu --noconfirm base-devel raylib
-fi
+# Ubuntu / Debian / Linux Mint
+sudo add-apt-repository universe -y && sudo apt update && sudo apt install -y build-essential git libasound2-dev libx11-dev libxrandr-dev libxi-dev libgl1-mesa-dev libglu1-mesa-dev libxcursor-dev libxinerama-dev libwayland-dev libxkbcommon-dev
 
-# 2. Download and install the rlcli tool globally
-sudo curl -sSL [https://raw.githubusercontent.com/The5xcuber/rlcli/main/rlcli](https://raw.githubusercontent.com/The5xcuber/rlcli/main/rlcli) -o /usr/local/bin/rlcli
-sudo chmod +x /usr/local/bin/rlcli
+# Fedora
+sudo dnf install -y gcc gcc-c++ git alsa-lib-devel mesa-libGL-devel libX11-devel libXrandr-devel libXi-devel libXcursor-devel libXinerama-devel libatomic
+
+# Arch Linux / SteamOS
+sudo pacman -Syu --noconfirm base-devel git alsa-lib mesa libx11 libxrandr libxi libxcursor libxinerama
+
+# Void Linux
+sudo xbps-install -y make git alsa-lib-devel libglvnd-devel libX11-devel libXrandr-devel libXi-devel libXcursor-devel libXinerama-devel mesa MesaLib-devel
+```
+### Download and Deploy rlcli
+```bash
+sudo curl -sSL [https://raw.githubusercontent.com/The5xcuber/rlcli/main/rlcli](https://raw.githubusercontent.com/The5xcuber/rlcli/main/rlcli) -o /usr/local/bin/rlcli && sudo chmod +x /usr/local/bin/rlcli
+echo "✓ rlcli successfully installed into /usr/local/bin/rlcli!"
+```
