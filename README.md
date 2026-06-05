@@ -13,20 +13,19 @@ Interactive Raylib Project builder that does (almost) everything like:
 
 ## 🚀 Installation
 
-Run this single command in your terminal to automatically check dependencies, install Raylib development packages, and deploy `rlcli` globally to your system:
+Run this clean two-step setup to enable the necessary repositories, install dependencies, and download `rlcli` globally:
 
 ```bash
-curl -sSL [https://raw.githubusercontent.com/The5xcuber/rlcli/main/rlcli](https://raw.githubusercontent.com/The5xcuber/rlcli/main/rlcli) | sudo bash -c '
-    if command -v apt-get &> /dev/null; then
-        apt-get update && apt-get install -y build-essential libraylib-dev
-    elif command -v dnf &> /dev/null; then
-        dnf install -y gcc gcc-c++ raylib-devel
-    elif command -v pacman &> /dev/null; then
-        pacman -Syu --noconfirm base-devel raylib
-    else
-        echo "⚠️ Distro package manager not recognized. Please install Raylib manually."
-    fi
-    cat > /usr/local/bin/rlcli
-    chmod +x /usr/local/bin/rlcli
-    echo "✓ rlcli installed successfully into /usr/local/bin/rlcli!"
-'
+# 1. Install Raylib and compilation tools based on your Linux distribution
+if command -v apt-get &> /dev/null; then
+    sudo add-apt-repository universe -y && sudo apt update
+    sudo apt install -y build-essential libraylib-dev
+elif command -v dnf &> /dev/null; then
+    sudo dnf install -y gcc gcc-c++ raylib-devel
+elif command -v pacman &> /dev/null; then
+    sudo pacman -Syu --noconfirm base-devel raylib
+fi
+
+# 2. Download and install the rlcli tool globally
+sudo curl -sSL [https://raw.githubusercontent.com/The5xcuber/rlcli/main/rlcli](https://raw.githubusercontent.com/The5xcuber/rlcli/main/rlcli) -o /usr/local/bin/rlcli
+sudo chmod +x /usr/local/bin/rlcli
